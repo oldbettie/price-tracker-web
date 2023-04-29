@@ -1,11 +1,12 @@
 name: Deploy price mates to s3
 
-on pull_request:
-  branches: [ main ]
+on:
+  pull_request:
+    branches: [ main ]
 
 jobs:
   Run-npm-build:
-    name: Run npm build
+    name: Run npm build test and deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +19,7 @@ jobs:
           npm run lint
           npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+  Deploy-to-s3`:
       - name: Checkout
         uses: actions/checkout@v1
 
