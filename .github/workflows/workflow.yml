@@ -9,9 +9,9 @@ on:
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
         with:
           node-version: 16
@@ -19,10 +19,24 @@ jobs:
       - run: npm run lint
       - run: npm run build
 
+      # outputs the build for the next step to use
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: /out
+
   push-to-s3:
     needs: lint-and-build
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
+      # gets the /out folder from the previous step
+      - uses: actions/download-artifact@v2
+        with:
+          name: build-output
+          path: /out
+
+      # pushes to s3 on main executions
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
