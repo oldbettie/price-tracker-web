@@ -9,7 +9,7 @@ on:
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: 2
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -18,13 +18,15 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+      - run: sleep 5
+      - run: ls
+      - run: cd out && ls -la
 
       # outputs the build for the next step to use
       - uses: actions/upload-artifact@v2
         with:
           name: build-output
           path: /out
-          debug: true
 
   push-to-s3:
     needs: lint-and-build
