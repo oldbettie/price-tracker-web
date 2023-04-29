@@ -12,6 +12,12 @@ yarn dev
 pnpm dev
 ```
 
+
+To check for linting errors before deploying run
+```bash
+npm run lint
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Dev log.
@@ -20,4 +26,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Created the project.
 - Removed default files.
 - setup basic page layout for landing page
-- add basic github actions file
+- add basic Github actions file
