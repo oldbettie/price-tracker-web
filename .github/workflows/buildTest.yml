@@ -1,0 +1,24 @@
+name: Test the build succeeds before merging pr to ensure we dont send broken code to main
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      # adds all the env files to the build
+      - run: touch .env.local
+      - run: sleep 5
+      - run: echo NEXT_PUBLIC_EMAIL_URL=${{ secrets.NEXT_PUBLIC_EMAIL_URL }} >> .env.local
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

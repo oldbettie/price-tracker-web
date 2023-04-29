@@ -3,8 +3,6 @@ name: Deploy price mates to s3
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 
 jobs:
@@ -16,12 +14,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+
       # adds all the env files to the build
       - run: touch .env.local
       - run: sleep 5
       - run: echo NEXT_PUBLIC_EMAIL_URL=${{ secrets.NEXT_PUBLIC_EMAIL_URL }} >> .env.local
 
-      - run: echo .env.local
       - run: npm ci
       - run: npm run lint
       - run: npm run build
