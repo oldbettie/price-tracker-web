@@ -16,14 +16,14 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: next lint
-      - run: next build
+      - run: npm run lint
+      - run: npm run build
 
       # outputs the build for the next step to use
       - uses: actions/upload-artifact@v2
         with:
           name: build-output
-          path: /out
+          path: *
 
   push-to-s3:
     needs: lint-and-build
