@@ -21,7 +21,7 @@ export default function Home() {
                     when the price drops below a certain threshold.
                 </p>
                 <br/>
-                <p>We are currently building this site to join early sign up below for early offerings.</p>
+                <p>We are currently building this platform, join the wait list and get access to exclusive early sign up offers.</p>
                 <Button content="Sign-up" onClick={() => console.log("clicked")} />
             </div>
         </div>
