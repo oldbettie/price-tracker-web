@@ -20,7 +20,7 @@ jobs:
       - run: npm run build
 
   push-to-s3:
-    needs: lint
+    needs: lint-and-build
     runs-on: ubuntu-latest
     steps:
       - uses: aws-actions/configure-aws-credentials@v1
