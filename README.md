@@ -27,7 +27,8 @@ All changes must be made in a branch and then a pull request must be made to mer
 I will try to follow a major feature branch with minor feature branches off of that.
 This means the main branch should always be deployable. And I can use the minor branches to test new features before merging them into the main branch.
 
-
+## Help
+If you are interested in helping out you will need to fork and clone the repo and submit your work in a pull request to be approved.
 
 ### Dev log.
 
