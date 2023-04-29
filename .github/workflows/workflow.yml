@@ -23,7 +23,8 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-output
-          path: *
+          path: /out
+          debug: true
 
   push-to-s3:
     needs: lint-and-build
