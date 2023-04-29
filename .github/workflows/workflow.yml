@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
 
+
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
@@ -13,14 +14,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
 
       # adds all the env files to the build
       - run: touch .env.local
       - run: sleep 5
       - run: echo NEXT_PUBLIC_EMAIL_URL=${{ secrets.NEXT_PUBLIC_EMAIL_URL }} >> .env.local
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
 
       # outputs the build for the next step to use
       - uses: actions/upload-artifact@v2

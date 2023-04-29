@@ -6,6 +6,7 @@ import styles from "@/Components/Forms/Form.module.css";
 export const MailchimpForm = () => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [success, setSuccess] = useState(false);
     const getAjaxUrl = (url: any) => url.replace("/post?", "/post-json?");
 
     async function submitForm(e: any) {
@@ -24,6 +25,7 @@ export const MailchimpForm = () => {
                 mode: "no-cors",
             })
 
+            setSuccess(true)
             const result = await req.json()
             console.log(result)
         } catch (error) {
@@ -74,6 +76,7 @@ export const MailchimpForm = () => {
                         value=""
                     />
                 </div>
+                {success && <h3 className={styles.thanks}>Thank-you we will email you when we have updates!</h3>}
                 <Button content={"Subscribe"} />
             </form>
         </div>
