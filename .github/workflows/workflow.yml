@@ -3,8 +3,6 @@ name: Deploy price mates to s3
 on:
   pull_request:
     branches: [ main ]
-  push:
-    branches: [ main ]
 
 jobs:
   lint-and-build:
@@ -18,9 +16,6 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - run: sleep 5
-      - run: ls
-      - run: cd out && ls -la
 
       # outputs the build for the next step to use
       - uses: actions/upload-artifact@v2
