@@ -2,8 +2,8 @@
 
 import styles from './page.module.css'
 import {Navigation} from "@/Components/Navigation/Navigation";
-import {Button} from "@/Components/Button/Button";
 import React from "react";
+import {MailchimpForm} from "@/Components/Forms/MailChimpForm";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
                 </p>
                 <br/>
                 <p>We are currently building this platform, join the wait list and get access to exclusive early sign up offers.</p>
-                <Button content="Sign-up" onClick={() => console.log("clicked")} />
+                <MailchimpForm />
             </div>
         </div>
     </main>
