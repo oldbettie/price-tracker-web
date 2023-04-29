@@ -27,3 +27,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - Removed default files.
 - setup basic page layout for landing page
 - add basic Github actions file
+- lock main branch to pull requests only
