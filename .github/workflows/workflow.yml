@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+      - run: next lint
+      - run: next build
 
       # outputs the build for the next step to use
       - uses: actions/upload-artifact@v2
