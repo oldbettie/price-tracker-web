@@ -1,4 +1,4 @@
-name: Test the build succeeds before merging pr to ensure we dont send broken code to main
+name: Testing Build before merge to main
 
 on:
   pull_request:
