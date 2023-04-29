@@ -29,6 +29,7 @@ This means the main branch should always be deployable. And I can use the minor 
 
 ## Help
 If you are interested in helping out you will need to fork and clone the repo and submit your work in a pull request to be approved.
+I will get a notification and review the changes and merge them into the main branch if they are good to go.
 
 ### Dev log.
 
