@@ -54,7 +54,8 @@ jobs:
       - run: aws s3 sync ./out s3://price-mates-landing-page --delete --exclude '.git/*
 
   invalidate-cloudfront-cache:
-    - needs: [lint-and-build, push-to-s3]
+    - name: check dist
+      needs: [lint-and-build, push-to-s3]
       uses: actions/checkout@master
       with:
         ref: dist
