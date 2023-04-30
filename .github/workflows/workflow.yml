@@ -55,7 +55,7 @@ jobs:
 
   invalidate-cloudfront-cache:
     - name: check dist
-      needs: [lint-and-build, push-to-s3]
+      needs: push-to-s3
       uses: actions/checkout@master
       with:
         ref: dist
