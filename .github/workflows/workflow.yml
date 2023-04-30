@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 #    FOR DEBUGGING UNCOMMENT THE PULL REQUEST LINES SO YOU CAN TEST IN A PR RATHER THEN MERGE
-#  pull_request:
-#    branches: []
+  pull_request:
+    branches: []
 
 
 jobs:
@@ -60,7 +60,7 @@ jobs:
       - uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.AWS_DISTRIBUTION }}
-          PATHS: "/index.html"
+          PATHS: "/*"
           AWS_REGION: "ap-southeast-2"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
