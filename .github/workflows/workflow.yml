@@ -57,28 +57,11 @@ jobs:
     needs: push-to-s3
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-        with:
-          ref: dist
-          # need at least 2 here so we can get a proper log in next step
-          fetch-depth: 2
-
-        run: |
-          # allow grep to fail
-          set +e
-          FILES=$(git log --stat="1000" -1 | grep '|' | awk '{print "/"$1}' | grep -e '\.html$')
-          set -e
-          [ -z "$FILES" ] && touch .updated_files && exit 0
-          for file in $FILES; do
-            echo $file
-            # add bare directory to list of updated paths when we see index.html
-            [[ "$file" == *"/index.html" ]] && echo $file | sed -e 's/\/index.html$/\//'
-          done | sort | uniq | tr '\n' ' ' > .updated_files
-
-      - uses: chetan/invalidate-cloudfront-action@v2
-        env:
-          PATHS_FROM: .updated_files
-          AWS_REGION: 'us-east-1'
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      name: Invalidate CloudFront
+      uses: chetan/invalidate-cloudfront-action@v2
+      env:
+        DISTRIBUTION: ${{ secrets.AWS_DISTRIBUTION }}
+        PATHS: "/index.html"
+        AWS_REGION: "ap-southeast-2"
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
