@@ -6,7 +6,7 @@ on:
 
 #    FOR DEBUGGING UNCOMMENT THE PULL REQUEST LINES SO YOU CAN TEST IN A PR RATHER THEN MERGE
   pull_request:
-    branches: [ main ]
+    branches: []
 
 
 jobs:
@@ -54,7 +54,6 @@ jobs:
       - run: aws s3 sync ./out s3://price-mates-landing-page --delete --exclude '.git/*
 
   invalidate-cloudfront-cache:
-    - name: checkout dist
     - needs: [lint-and-build, push-to-s3]
       uses: actions/checkout@master
       with:
