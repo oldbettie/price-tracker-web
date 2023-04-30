@@ -1,8 +1,9 @@
 name: Testing Build before merge to main
 
+# allows all branches to test the build
 on:
   pull_request:
-    branches: [ main ]
+    branches: []
 
 jobs:
   lint-and-build:
