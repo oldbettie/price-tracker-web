@@ -12,6 +12,9 @@
 /.next/
 /out
 
+#just regular notes not to be sent to github
+notes.md
+
 # production
 /build
 
@@ -27,7 +30,7 @@ yarn-error.log*
 # local env files
 .env*.local
 .env.local
-
+.env
 # vercel
 .vercel
 
