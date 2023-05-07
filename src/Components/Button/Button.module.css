@@ -1,27 +1,26 @@
 .button {
     display: flex;
     align-items: center;
-    height: 30px;
-    width: 90px;
+    height: 35px;
+    width: 85px;
     margin: 5px auto;
     border-radius: 10px;
-    color: #B4B4B4FF;
-    background-color: #671212FF;
     border: 2px solid #B4B4B4FF;
 }
 
 .button p {
     margin: 0 auto;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .button a {
     margin: 0 auto;
-    font-size: 11px;
+    font-size: 13px;
 }
 
 .button:hover {
     cursor: pointer;
+    font-size: 20px;
 }
 
 
@@ -31,11 +30,9 @@
         display: flex;
         align-items: center;
         height: 40px;
-        width: 120px;
+        width: 110px;
         margin: 0 auto;
         border-radius: 10px;
-        color: #B4B4B4FF;
-        background-color: #671212FF;
         border: 2px solid #B4B4B4FF;
     }
 

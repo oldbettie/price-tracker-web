@@ -6,10 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 
@@ -48,3 +44,8 @@ I will get a notification and review the changes and merge them into the main br
 - (server-update)
     - Version 0.0.1 of the server is running every 6 hours to pull data for a list of products.
     - Setup the database to store the product data.
+
+(07/05/23) Version 0.0.3
+- Integrate Google Analytics.
+- Spent some time looking into some graph libraries for v1
+- Spent some time working on a basic server wire model and infra

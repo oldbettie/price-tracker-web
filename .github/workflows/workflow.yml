@@ -23,6 +23,7 @@ jobs:
       - run: touch .env.local
       - run: sleep 5
       - run: echo NEXT_PUBLIC_EMAIL_URL=${{ secrets.NEXT_PUBLIC_EMAIL_URL }} >> .env.local
+      - run: echo NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }} >> .env.local
 
       - run: npm ci
       - run: npm run lint

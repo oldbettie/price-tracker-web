@@ -4,10 +4,12 @@ import styles from './page.module.css'
 import {Navigation} from "@/Components/Navigation/Navigation";
 import React from "react";
 import {MailchimpForm} from "@/Components/Forms/MailChimpForm";
+import {Analytics} from "@/Components/GA/Analytics";
 
 export default function Home() {
   return (
     <main>
+        <Analytics />
         <div className={styles.backgroundImage}></div>
         <div className={styles.backgroundFilter}></div>
         <Navigation/>
