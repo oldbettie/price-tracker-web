@@ -21,7 +21,7 @@ notes.md
 # misc
 .DS_Store
 *.pem
-
+.vscode
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -41,3 +41,4 @@ next-env.d.ts
 settings.json
 .vscode/*
 .idea
+NOTES.md
