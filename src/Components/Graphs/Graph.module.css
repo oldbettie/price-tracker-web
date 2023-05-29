@@ -1,0 +1,29 @@
+.contentContainer {
+    color: black;
+}
+
+.productContainer {
+    font-size: 18px;
+    background-color: #868686;
+    opacity: 0.75;;
+}
+
+.productInfo {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.productName {
+    color: #a5dcee;
+    font-size: 34px;
+}
+
+.lineChart {
+    height: 500px;
+}
+
+.productInfo h3 {
+    margin-top: 60px;
+}
