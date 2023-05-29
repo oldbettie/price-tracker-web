@@ -5,11 +5,10 @@
     height: 60px;
     display: flex;
     align-content: space-between;
-    background: #000;
-    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.container h1 {
+.imageContainer {
     width: 45%;
     text-align: center;
     margin: auto auto;

@@ -3,9 +3,8 @@
 }
 
 .productContainer {
+    color: white;
     font-size: 18px;
-    background-color: #868686;
-    opacity: 0.75;;
 }
 
 .productInfo {
@@ -16,12 +15,14 @@
 }
 
 .productName {
-    color: #a5dcee;
     font-size: 34px;
 }
 
 .lineChart {
-    height: 500px;
+    background-color: rgba(127, 126, 255, 0.7);
+    border-radius: 20px;
+    height: 450px;
+    color: var(--secondary);
 }
 
 .productInfo h3 {
