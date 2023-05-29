@@ -49,4 +49,12 @@ I will get a notification and review the changes and merge them into the main br
 (07/05/23) Version 0.0.3
 - Integrate Google Analytics.
 - Spent some time looking into some graph libraries for v1
-- Spent some time working on a basic server wire model and infra
+- Spent some time working on a basic server wire model and infra.
+
+(28/05/23) V 0.0.4
+- Setup basic nivo chart for historical price on parts
+- Setup the basic graph component and all it's pieces
+
+(29/05/23) V 0.0.4
+- Added basic metadata (support for dynamic metadata is done differently will need to work that out later)
+- Added PageContent component so don't have to copy all the generic layout stuff to every page
