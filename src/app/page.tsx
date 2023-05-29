@@ -1,10 +1,7 @@
 'use client'
 
-import styles from './page.module.css'
-import {Navigation} from "@/Components/Navigation/Navigation";
 import React from "react";
 import {MailchimpForm} from "@/Components/Forms/MailChimpForm";
-import {Analytics} from "@/Components/GA/Analytics";
 import {PageContent} from "@/Components/page/PageContent";
 
 export default function Home() {
