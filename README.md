@@ -2,6 +2,7 @@
 
 ## Getting Started
 
+Basic next.js app using npm run `npm i` to update everything
 First, run the development server:
 
 ```bash
