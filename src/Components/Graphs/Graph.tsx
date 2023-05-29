@@ -16,8 +16,7 @@ export interface InLastDays {
 export function Graph({ inName }: GraphProps): JSX.Element {
     const [productInfo, setProductInfo] = useState<Product[]>([])
     const [inLastDays, setInLastDays] = useState<InLastDays>({averagePrice: 0, inLastDays: 0})
-    const [error, setError] = useState<string>()
-    const lastIndex = productInfo.findLastIndex(product => product.currentPrice)
+    const lastIndex = productInfo.length - 1
 
     function updateProductInfo(data: []) {
         const productArray: Product[] = []
@@ -67,7 +66,6 @@ export function Graph({ inName }: GraphProps): JSX.Element {
                 await updateProductInfo(data)
 
             } catch (error: any) {
-                setError(error.message)
                 console.error('There was an error!', error);
             }
         }
@@ -124,6 +122,9 @@ function LineGraph({ productData }: lineProps): JSX.Element {
             }
 
     })
+    const minPrice = (Math.min(...data.map(i => i.y))) - 10
+    const maxPrice = Math.max(...data.map(i => i.y)) + 30
+
     const asSerie: Serie[] = [{
             id: productData[0].name,
             color: "hsl(257, 70%, 50%)",
@@ -141,7 +142,7 @@ function LineGraph({ productData }: lineProps): JSX.Element {
                     "left": 60
                 }}
                 xScale={{ type: 'point' }}
-                yScale={{ type: 'linear' }}
+                yScale={{ type: 'linear', min: minPrice, max: maxPrice }}
                 yFormat=" >-.2f"
                 axisTop={null}
                 axisRight={null}
@@ -170,7 +171,6 @@ function LineGraph({ productData }: lineProps): JSX.Element {
                 curve={'linear'}
                 lineWidth={4}
                 colors={['#ADD8E6FF', '#97e3d5', '#aeff00', '#AEFF00FF']}
-
             />
         </div>
     )
