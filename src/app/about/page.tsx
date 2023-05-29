@@ -1,17 +1,11 @@
 'use client'
 
-import {Navigation} from "@/Components/Navigation/Navigation";
 import React from "react";
-import styles from "@/app/page.module.css";
+import {PageContent} from "@/Components/page/PageContent";
 
 export default function About(): JSX.Element {
   return (
-      <main>
-          <div className={styles.backgroundImage}></div>
-          <div className={styles.backgroundFilter}></div>
-          <Navigation/>
-          <div className={styles.container}>
-              <div className={styles.contentContainer}>
+      <PageContent>
                   <h2>- About Us -</h2>
                   <p>
                       I started to realise with the increased cost of living there were more and more people online
@@ -54,8 +48,6 @@ export default function About(): JSX.Element {
                       I believe in full context from the start this will be a paid subscription, I don't know when the paid subscription will be introduced.
                       I will offer some sort of deal to those that sign up before the model is introduced. And it will be limited to the first 100 users.
                   </p>
-              </div>
-          </div>
-      </main>
+      </PageContent>
   );
 }
