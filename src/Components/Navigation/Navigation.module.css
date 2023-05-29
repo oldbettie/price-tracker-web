@@ -1,50 +1,55 @@
 .container {
-    z-index: 4;
-    position: absolute;
     width: 100%;
-    height: 60px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.contentContainer {
+    margin: 0 auto;
     display: flex;
     align-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .imageContainer {
-    width: 45%;
-    text-align: center;
+    width: 170px;
+    height: 45px;
     margin: auto auto;
-    padding-right: 0;
-    font-size: 24px;
+    position: relative;
 }
 
 .buttonContainer {
     display: flex;
     justify-content: space-around;
-    width: 55%;
     margin: auto auto;
+    gap: 3px;
 }
 
 
 /*Desktop*/
 @media (min-width: 800px) {
     .container {
-        width: 100%;
+        max-width: 100%;
         height: 70px;
         display: flex;
         align-content: space-between;
     }
+    .contentContainer {
+        width: 1600px;
+    }
 
-    .container h1 {
-        width: 50%;
-        text-align: center;
-        margin: auto auto;
-        padding-right: 120px;
-        font-size: 30px;
+    .imageContainer {
+        width: 280px;
+        height: 65px;
+    }
+
+    .imageContainer img {
+        margin-left: 40px;
     }
 
     .buttonContainer {
         display: flex;
         justify-content: space-around;
         width: 40%;
-        margin: auto auto;
     }
 }
