@@ -2,23 +2,16 @@ import React, {ReactNode} from "react";
 import styles from "./pageContent.module.css";
 import {Navigation} from "@/Components/Navigation/Navigation";
 import {Analytics} from "@/Components/GA/Analytics";
-import {MetaDescription, MetaTitle} from "@/Components/page/meta";
 
 interface PageProps {
-    title?: string
-    description?: string
     children: ReactNode
 }
 
-export function PageContent({title, description, children}: PageProps): JSX.Element {
-    const name = "Price Mates"
-//     do page stuff for analytics
 
+export function PageContent({children}: PageProps): JSX.Element {
     return (
-        <div>
+        <main>
             <Analytics />
-            <MetaTitle content={title ? `${title} - ${name}` : name} />
-            <MetaDescription content={description} />
 
             <div className={styles.backgroundImage}></div>
             <div className={styles.backgroundFilter}></div>
@@ -28,6 +21,6 @@ export function PageContent({title, description, children}: PageProps): JSX.Elem
                     {children}
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

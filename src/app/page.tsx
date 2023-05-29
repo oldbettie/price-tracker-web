@@ -1,8 +1,10 @@
-'use client'
-
 import React from "react";
-import {MailchimpForm} from "@/Components/Forms/MailChimpForm";
 import {PageContent} from "@/Components/page/PageContent";
+
+export const metadata = {
+    title: "Price Mates",
+    description: "find and compare prices on camping and 4wd equipment"
+}
 
 export default function Home() {
   return (
@@ -15,8 +17,6 @@ export default function Home() {
             when the price drops below a certain threshold.
         </p>
         <br/>
-        <p>We are currently building this platform, join the wait list and get access to exclusive early sign up offers.</p>
-        <MailchimpForm />
     </PageContent>
   )
 }

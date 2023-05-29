@@ -1,33 +1,27 @@
-import Head from 'next/head'
+import NextHead from 'next/head';
 
 interface MetaProps {
-  content?: string
+    title: string
+    content?: string;
 }
 
-export function MetaTitle({content}: MetaProps) {
+export function MetaInfo({ title, content }: MetaProps): JSX.Element {
     return (
-        <Head>
-            <title>{content}</title>
-            <meta property="og:title" content={content} key="title" />
-        </Head>
-    )
-}
-
-export function MetaDescription({content = ''}: MetaProps) {
-    if (!content.length) return null
-    return (
-        <Head>
+        <NextHead>
+            <title>{title}</title>
+            <meta property="og:title" content={title} key="title" />
             <meta name="description" content={content} />
             <meta property="og:description" content={content} key="description" />
-        </Head>
-    )
+        </NextHead>
+    );
 }
 
-export function MetaRobots({content = ''}: MetaProps) {
-    if (!content.length) return null
+
+export function MetaRobots({ content = '' }: MetaProps): JSX.Element {
+    if (!content.length) return (<></>);
     return (
-        <Head>
+        <NextHead>
             <meta name="robots" content={content} />
-        </Head>
-    )
+        </NextHead>
+    );
 }

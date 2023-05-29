@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./Graph.module.css"
 import React, {useEffect, useState} from "react";
 import {ResponsiveLine, Serie} from "@nivo/line";
