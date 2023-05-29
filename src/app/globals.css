@@ -3,7 +3,9 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
+  --primary: #7F7EFF;
+  --secondary: #210B2C;
+  --backup: #55286F;
 }
 
 * {
@@ -12,7 +14,6 @@
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 

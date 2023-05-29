@@ -31,7 +31,7 @@
 }
 
 .contentContainer a {
-    color: darkslateblue;
+    color: var(--backup);
 }
 
 .container h2 {

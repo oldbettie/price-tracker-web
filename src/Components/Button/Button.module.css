@@ -1,11 +1,13 @@
 .button {
+    color: var(--primary);
+    background-color: var(--secondary);
     display: flex;
     align-items: center;
     height: 35px;
     width: 85px;
     margin: 5px auto;
     border-radius: 10px;
-    border: 2px solid #B4B4B4FF;
+    border: 2px solid var(--primary);
 }
 
 .button p {
@@ -33,7 +35,7 @@
         width: 110px;
         margin: 0 auto;
         border-radius: 10px;
-        border: 2px solid #B4B4B4FF;
+        border: 2px solid var(--primary);
     }
 
 
