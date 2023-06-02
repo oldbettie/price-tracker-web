@@ -3,6 +3,7 @@
 import styles from "./Graph.module.css"
 import React, {useEffect, useState} from "react";
 import {ResponsiveLine, Serie} from "@nivo/line";
+import {UserConfig} from "@/lib/config/UserConfig";
 
 export interface GraphProps {
     inName: string
@@ -58,8 +59,10 @@ export function Graph({ inName }: GraphProps): JSX.Element {
 
     useEffect(() => {
         async function getProductData(){
+            const url = UserConfig.API_URL
+            console.log(url)
             try {
-                const res: Response = await fetch(`http://localhost:8080/product/${inName}`)
+                const res: Response = await fetch(`${url}/product/${inName}`)
                 const data = await res.json();
                 if (!res.ok) {
                     const error = (data && data.message) || res.statusText;
