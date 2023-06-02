@@ -1,6 +1,7 @@
 import React from "react";
-import {Graph} from "@/Components/Graphs/Graph";
 import {PageContent} from "@/Components/page/PageContent";
+import Link from "next/link";
+import {productRoutes} from "@/app/items/[id]/products";
 
 export const metadata = {
     title: "Items - Price Mates",
@@ -10,7 +11,16 @@ export const metadata = {
 export default function Items(): JSX.Element {
     return (
         <PageContent>
-            <Graph inName="270_Free-Standing_Awning" />
+            <h2>All products we currently track</h2>
+            <p>If a product you like is not on the list below, please let us know <Link href={"/contact-us"}>here!</Link></p>
+            <br/>
+            {productRoutes.map((link, index) => {
+                return (
+                    <div key={index}>
+                        <Link href={link.link}><h2>{link.name}</h2></Link>
+                    </div>
+                    )}
+            )}
         </PageContent>
     );
 }
