@@ -10,9 +10,9 @@ npm run dev
 ```
 
 
-To check for linting errors before deploying run
+Before deploying a pr, run this script to validate the linting and the build from the root project directory.
 ```bash
-npm run lint
+./scripts/test-and-build.sh
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -58,3 +58,7 @@ I will get a notification and review the changes and merge them into the main br
 (29/05/23) V 0.0.4
 - Added basic metadata (support for dynamic metadata is done differently will need to work that out later)
 - Added PageContent component so don't have to copy all the generic layout stuff to every page
+
+(2/06/23) V 0.0.5
+- Added a script to run the build and lint locally before creating pr
+- Added dynamic routes page for all the items 
