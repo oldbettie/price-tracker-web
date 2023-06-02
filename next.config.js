@@ -6,7 +6,20 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-  },
+  }
 }
 
 module.exports = nextConfig
+
+//builds shitty source map for dev tools
+
+// module.exports = {
+//   webpack: (config, { dev }) => {
+//     // Enable Source Maps only during development
+//
+//       config.devtool = 'eval-source-map';
+//
+//
+//     return config;
+//   },
+// };

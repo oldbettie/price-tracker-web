@@ -9,6 +9,7 @@ export const metadata = {
 }
 
 export default function Items(): JSX.Element {
+    debugger
     return (
         <PageContent>
             <h2>All products we currently track</h2>
@@ -17,7 +18,7 @@ export default function Items(): JSX.Element {
             {productRoutes.map((link, index) => {
                 return (
                     <div key={index}>
-                        <Link href={link.link}><h2>{link.name}</h2></Link>
+                        <a href={link.link}><h2>{link.name}</h2></a>
                     </div>
                     )}
             )}
