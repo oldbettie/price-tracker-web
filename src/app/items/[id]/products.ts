@@ -6,35 +6,35 @@ interface LinkProps {
 
 export const productRoutes: LinkProps[] = [
     {
-        name: "270 Free Standing Awning",
-        link: "/items/270_Free-Standing_Awning",
+        name: "270 Free Standing Awning", // TODO this link needs -
+        link: "/items/270-Free-Standing-Awning",
     },
     {
         name: "30L Drawer Fridge Freezer",
-        link: "/items/30L_Drawer_Fridge_Freezer",
+        link: "/items/30L-Drawer-Fridge-Freezer",
     },
     {
         name: "Kings 200Ah Lithium LiFePO4 Battery",
-        link: "/items/Kings_200Ah_Lithium_LiFePO4_Battery",
+        link: "/items/Kings-200Ah-Lithium-LiFePO4-Battery",
     },
     {
         name: "Kings Big Daddy Deluxe Double Swag",
-        link: "/items/Kings_Big_Daddy_Deluxe_Double_Swag",
+        link: "/items/Kings-Big-Daddy-Deluxe-Double-Swag",
     },
     {
         name: "Kings 40A DCDC Charger | Quick Connect Plugs",
-        link: "/items/Kings_40A_DCDC_Charger_|_Quick_Connect_Plugs",
+        link: "/items/Kings-40A-DCDC-Charger-|-Quick-Connect-Plugs",
     },
     {
         name: "Kings 2x3m Side Awning",
-        link: "/items/Kings_2x3m_Side_Awning",
+        link: "/items/Kings-2x3m-Side-Awning",
     },
     {
         name: "Domin8r X 12,000lb Winch | 5.7hp Motor",
-        link: "/items/Domin8r_X_12,000lb_Winch_|_5.7hp_Motor",
+        link: "/items/Domin8r-X-12,000lb-Winch-|-5.7hp-Motor",
     },
     {
         name: "30L Drawer Fridge Freezer",
-        link: "/items/30L_Drawer_Fridge_Freezer",
+        link: "/items/30L-Drawer-Fridge-Freezer",
     }
 ]
