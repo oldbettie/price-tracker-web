@@ -3,8 +3,8 @@
     background-color: var(--secondary);
     display: flex;
     align-items: center;
-    height: 35px;
-    width: 85px;
+    height: 40px;
+    width: 130px;
     margin: 5px auto;
     border-radius: 10px;
     border: 2px solid var(--primary);
@@ -12,12 +12,12 @@
 
 .button p {
     margin: 0 auto;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .button a {
     margin: 0 auto;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .button:hover {
