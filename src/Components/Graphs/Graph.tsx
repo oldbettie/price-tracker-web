@@ -3,9 +3,10 @@
 import styles from "./Graph.module.css"
 import React, {useEffect, useState} from "react";
 import {ResponsiveLine, Serie} from "@nivo/line";
+import {UserConfig} from "@/lib/config/UserConfig";
 
 export interface GraphProps {
-    inData: []
+    inData: string
     onClick?: () => void
     sampleCount?: number
 }
@@ -19,6 +20,23 @@ export function Graph({ inData }: GraphProps): JSX.Element {
     const [productInfo, setProductInfo] = useState<Product[]>([])
     const [inLastDays, setInLastDays] = useState<InLastDays>({averagePrice: 0, inLastDays: 0})
     const lastIndex = productInfo.length - 1
+
+    async function getProductData(id: string) {
+        const url = UserConfig.API_URL
+        try {
+            const res: Response = await fetch(`${url}/product/${id}/`, {
+                next: { revalidate: 60 }
+            })
+            const data = await res.json();
+            if (!res.ok) {
+                const error = (data && data.message) || res.statusText;
+                return Promise.reject(error);
+            }
+            return data
+        } catch (error: any) {
+            console.error('There was an error!', error);
+        }
+    }
 
     function updateProductInfo(data: []) {
         const productArray: Product[] = []
@@ -57,7 +75,9 @@ export function Graph({ inData }: GraphProps): JSX.Element {
     }
 
     useEffect(() => {
-        updateProductInfo(inData)
+        getProductData(inData).then((data) => {
+            updateProductInfo(data)
+        })
     }, [inData])
 
     return (

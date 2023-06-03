@@ -6,7 +6,7 @@ export const metadata = {
     description: "find and compare prices on camping and 4wd equipment"
 }
 
-export default function About(): JSX.Element {
+export default function Dashboard(): JSX.Element {
     return (
         <PageContent>
             <h2>- Dashboard -</h2>
