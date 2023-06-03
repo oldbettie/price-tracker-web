@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export interface ButtonProps {
     content: string;
-    onClick?: () => void;
+    click?: () => void;
     path?: string;
 }
 
-export function Button({ content, onClick, path }: ButtonProps): JSX.Element {
+export function Button({ content, click, path,  }: ButtonProps): JSX.Element {
     return (
-        <button className={styles.button} onClick={onClick}>
+        <button className={styles.button} onClick={click}>
             {path ? <Link href={path}>{content}</Link> : <p>{content}</p>}
         </button>
     );
