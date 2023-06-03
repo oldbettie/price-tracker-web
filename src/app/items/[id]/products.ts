@@ -6,7 +6,7 @@ interface LinkProps {
 
 export const productRoutes: LinkProps[] = [
     {
-        name: "270 Free Standing Awning", // TODO this link needs -
+        name: "270 Free Standing Awning",
         link: "270-Free-Standing-Awning",
     },
     {
@@ -22,8 +22,8 @@ export const productRoutes: LinkProps[] = [
         link: "Kings-Big-Daddy-Deluxe-Double-Swag",
     },
     {
-        name: "Kings 40A DCDC Charger | Quick Connect Plugs",
-        link: "Kings-40A-DCDC-Charger-|-Quick-Connect-Plugs",
+        name: "Kings 40A DCDC Charger | Quick Connect Plugs", // TODO vertical bars cant be used in url
+        link: "Kings-40A-DCDC-Charger-_-Quick-Connect-Plugs",
     },
     {
         name: "Kings 2x3m Side Awning",
@@ -31,7 +31,7 @@ export const productRoutes: LinkProps[] = [
     },
     {
         name: "Domin8r X 12,000lb Winch | 5.7hp Motor",
-        link: "Domin8r-X-12,000lb-Winch-|-5.7hp-Motor",
+        link: "Domin8r-X-12,000lb-Winch-_-5.7hp-Motor",
     },
     {
         name: "30L Drawer Fridge Freezer",
