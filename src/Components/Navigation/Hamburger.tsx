@@ -18,8 +18,8 @@ export const HamburgerMenu = () => {
                 <FiMenu size={35} onClick={toggleMenu} />
             </div> :
             <div className={styles.hamburgerContent}>
-                <FiX size={50} onClick={toggleMenu}/>
-                <div cclassName={styles.buttonContainer}>
+                <FiX size={45} onClick={toggleMenu}/>
+                <div className={styles.buttonContainer}>
                     <Button content="Home" path={"/"} click={toggleMenu} />
                     {UserConfig.ITEMS_FEATURE && <Button content="Items" path={"/items"} click={toggleMenu} />}
                     <Button content="About" path={"/about"} click={toggleMenu} />
