@@ -7,7 +7,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true
+  trailingSlash: true,
+  productionBrowserSourceMaps: false
 }
 
 module.exports = nextConfig

@@ -9,6 +9,10 @@ First, run the development server:
 npm run dev
 ```
 
+## Debugging
+for components marked with `use client` you can just use the normal `debugger`
+for server components/pages checkout these [docs](https://nextjs.org/docs/pages/building-your-application/configuring/debugging) for how to setup a debugger with your IDE.
+
 
 Before deploying a pr, run this script to validate the linting and the build from the root project directory.
 ```bash
