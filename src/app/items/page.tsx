@@ -18,7 +18,7 @@ export default function Items(): JSX.Element {
             {productRoutes.map((link, index) => {
                 return (
                     <div key={index}>
-                        <a href={link.link}><h2>{link.name}</h2></a>
+                        <Link href={`/items/${link.link}`}><h2>{link.name}</h2></Link>
                     </div>
                     )}
             )}
