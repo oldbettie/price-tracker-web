@@ -15,6 +15,7 @@ for server components/pages checkout these [docs](https://nextjs.org/docs/pages/
 
 
 Before deploying a pr, run this script to validate the linting and the build from the root project directory.
+This will also check prettier formatting in `./src/**` and run it if it's needed. eslint will help you ;)
 ```bash
 ./scripts/test-and-build.sh
 ```
