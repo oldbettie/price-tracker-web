@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import {useState} from "react";
-import {toQueryString} from "@/helpers/toQueryString";
-import {Button} from "@/Components/Button/Button";
-import styles from "@/Components/Forms/Form.module.css";
+import { useState } from "react"
+import { toQueryString } from "@/helpers/toQueryString"
+import { Button } from "@/Components/Button/Button"
+import styles from "@/Components/Forms/Form.module.css"
 
 export const MailchimpForm = () => {
-    const [email, setEmail] = useState("");
-    const [name, setName] = useState("");
-    const [success, setSuccess] = useState(false);
-    const getAjaxUrl = (url: any) => url.replace("/post?", "/post-json?");
+    const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
+    const [success, setSuccess] = useState(false)
+    const getAjaxUrl = (url: any) => url.replace("/post?", "/post-json?")
 
     async function submitForm(e: any) {
         e.preventDefault()
@@ -18,12 +18,12 @@ export const MailchimpForm = () => {
             FNAME: name,
         }
 
-        const params = toQueryString(data);
-        const url = `${getAjaxUrl(process.env.NEXT_PUBLIC_EMAIL_URL)}&${params}`;
+        const params = toQueryString(data)
+        const url = `${getAjaxUrl(process.env.NEXT_PUBLIC_EMAIL_URL)}&${params}`
 
         try {
             // @ts-ignore
-            const req= await fetch(url, {
+            const req = await fetch(url, {
                 mode: "no-cors",
             })
 
@@ -53,26 +53,18 @@ export const MailchimpForm = () => {
                 </div>
                 <div className={styles.inputContent}>
                     <label htmlFor="mce-FNAME">First Name</label>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <span
-                        id="mce-FNAME-HELPERTEXT"
-                        className="helper_text"
-                    >
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                    <span id="mce-FNAME-HELPERTEXT" className="helper_text">
                         We don't need your name but it helps us make it more personal.
                     </span>
                 </div>
 
-                 {/*real people should not fill this in and expect good things - do not remove this or risk form bot signups*/}
-                <div
-                    style={{ position: "absolute", left: "-5000px" }}
-                    aria-hidden="true"
-                >
+                {/*real people should not fill this in and expect good things - do not remove this or risk form bot signups*/}
+                <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
                     <input
-                        onChange={() => {new Error("You are a bot")}}
+                        onChange={() => {
+                            new Error("You are a bot")
+                        }}
                         type="text"
                         tabIndex={-1}
                         value=""
@@ -82,5 +74,5 @@ export const MailchimpForm = () => {
                 <Button content={"Subscribe"} />
             </form>
         </div>
-    );
-};
+    )
+}

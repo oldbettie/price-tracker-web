@@ -1,7 +1,7 @@
-import {Graph} from "@/Components/Graphs/Graph";
-import {PageContent} from "@/Components/page/PageContent";
-import React from "react";
-import {productRoutes} from "@/app/items/[id]/products";
+import { Graph } from "@/Components/Graphs/Graph"
+import { PageContent } from "@/Components/page/PageContent"
+import React from "react"
+import { productRoutes } from "@/app/items/[id]/products"
 
 export function generateStaticParams() {
     return productRoutes.map((p) => {
@@ -15,17 +15,17 @@ export function generateStaticParams() {
  */
 export interface IProps {
     params: {
-        id: string;
-    };
-    searchParams: {};
+        id: string
+    }
+    searchParams: {}
 }
 
 export const metadata = {
     title: "Item - Price Mates",
-    description: "track the price of the current selected item."
+    description: "track the price of the current selected item.",
 }
 
-export default async function Page({ params }: IProps){
+export default async function Page({ params }: IProps) {
     return (
         <PageContent>
             <Graph inData={params.id} />

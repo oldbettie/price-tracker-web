@@ -24,7 +24,6 @@
     cursor: pointer;
 }
 
-
 /*Desktop*/
 @media (min-width: 850px) {
     .button {
@@ -35,7 +34,6 @@
         border-radius: 10px;
         border: 2px solid var(--primary);
     }
-
 
     .button p {
         font-size: 16px;
