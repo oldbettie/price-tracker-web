@@ -21,7 +21,7 @@ export default function Items(): JSX.Element {
                 If a product you like is not on the list below, please let us know{" "}
                 <Link href={"/contact-us"}>here!</Link>
             </p>
-            <br />
+            <br/>
             {routes.map((link, index) => {
                 return (
                     <div key={index}>
