@@ -1,17 +1,16 @@
 .hamburgerIcon {
-        position: fixed;
-        right: 15px;
-        top: 10px;
+    position: fixed;
+    right: 15px;
+    top: 10px;
 }
 
 .hamburgerIcon svg:hover {
-        cursor: pointer;
+    cursor: pointer;
 }
 
 .hamburgerContent svg:hover {
     cursor: pointer;
 }
-
 
 .hamburgerContent {
     width: 50%;

@@ -27,7 +27,6 @@
     font-size: 12px;
 }
 
-
 .formHeader {
     width: 100%;
     margin: 20px auto;
@@ -41,7 +40,6 @@
     margin: 0 auto 20px;
     font-size: 16px;
 }
-
 
 @media (min-width: 800px) {
     .formContainer {
@@ -72,7 +70,6 @@
         padding: 10px 0;
         font-size: 12px;
     }
-
 
     .formHeader {
         width: 100%;

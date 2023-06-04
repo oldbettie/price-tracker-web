@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "NODE_ENV=production next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier-check": "prettier --check ./src",
+    "prettier-fix": "prettier --write ./src"
   },
   "dependencies": {
     "@nivo/colors": "^0.80.0",
