@@ -5,10 +5,10 @@ export interface FeatureConfigI {
 
 export const localConfig: FeatureConfigI = {
     API_URL: "http://localhost:8080",
-    ITEMS_FEATURE: true
+    ITEMS_FEATURE: true,
 }
 
 export const productionConfig: FeatureConfigI = {
     API_URL: `${process.env.NEXT_PUBLIC_API_URL}`,
-    ITEMS_FEATURE: false
+    ITEMS_FEATURE: false,
 }

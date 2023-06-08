@@ -1,16 +1,16 @@
-import styles from './Button.module.css';
-import Link from "next/link";
+import styles from "./Button.module.css"
+import Link from "next/link"
 
 export interface ButtonProps {
-    content: string;
-    click?: () => void;
-    path?: string;
+    content: string
+    click?: () => void
+    path?: string
 }
 
-export function Button({ content, click, path,  }: ButtonProps): JSX.Element {
+export function Button({ content, click, path }: ButtonProps): JSX.Element {
     return (
-        <button className={styles.button} onClick={click}>
+        <button className={`${styles.button} hover:text-backup hover:border-backup`} onClick={click}>
             {path ? <Link href={path}>{content}</Link> : <p>{content}</p>}
         </button>
-    );
+    )
 }

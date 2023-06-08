@@ -1,7 +1,6 @@
-
 interface LinkProps {
-    name: string,
-    link: string,
+    name: string
+    link: string
 }
 
 export const productRoutes: LinkProps[] = [
@@ -36,5 +35,5 @@ export const productRoutes: LinkProps[] = [
     {
         name: "30L Drawer Fridge Freezer",
         link: "30L-Drawer-Fridge-Freezer",
-    }
+    },
 ]

@@ -1,13 +1,15 @@
-import {localConfig, productionConfig} from "@/lib/config/FeatureConfig";
+import { localConfig, productionConfig } from "@/lib/config/FeatureConfig"
 
 export const UserConfig = (() => {
     if (process.env.NODE_ENV === "development") {
         return {
-            ...localConfig
+            ...localConfig,
         }
     } else if (process.env.NODE_ENV === "production") {
         return {
-            ...productionConfig
+            ...productionConfig,
         }
-    } else {throw Error}
+    } else {
+        throw Error
+    }
 })()
