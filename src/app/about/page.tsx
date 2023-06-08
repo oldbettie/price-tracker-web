@@ -30,7 +30,7 @@ export default function About(): JSX.Element {
                     enough data is to be able to predict when the best time to buy is and notify you when the price is
                     at its lowest.
                 </p>
-                <hr/>
+                <hr />
                 <p>
                     V1 - will just track a handful of highly requested parts and send an alert when the price drops
                     below a certain threshold.
@@ -45,7 +45,7 @@ export default function About(): JSX.Element {
                     I want to use AI to predict when we might get a really good deal on the items and let you know it's
                     time to start saving those dollars!
                 </p>
-                <hr/>
+                <hr />
                 <p>
                     I believe in full context from the start this will be a paid subscription, I don't know when the
                     paid subscription will be introduced. I will offer some sort of deal to those that sign up before

@@ -32,7 +32,7 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
         {
             id: productData[0].name,
             color: "hsl(257, 70%, 50%)",
-            data: [ ...data ],
+            data: [...data],
         },
     ]
 
@@ -75,7 +75,7 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
                 useMesh={true}
                 curve={"linear"}
                 lineWidth={4}
-                colors={[ "#ADD8E6FF", "#97e3d5", "#aeff00", "#AEFF00FF" ]}
+                colors={["#ADD8E6FF", "#97e3d5", "#aeff00", "#AEFF00FF"]}
             />
         </div>
     )
