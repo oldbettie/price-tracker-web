@@ -17,16 +17,14 @@ export default function About(): JSX.Element {
                     <a href="mailto: jj.pricemates@gmail.com"> email</a> us.
                 </p>
                 <p>
-                    If you wish to sign up for early access or just help us build this program you can become a <a
-                    href="https://www.patreon.com/PriceMates"> Patreon</a> member. You dont need to do this we will
-                    always offer
-                    a free version but it
-                    will
-                    help us get off the ground and will have access to limited features and offers.
+                    If you wish to sign up for early access or just help us build this program you can become a{" "}
+                    <a href="https://www.patreon.com/PriceMates"> Patreon</a> member. You dont need to do this we will
+                    always offer a free version but it will help us get off the ground and will have access to limited
+                    features and offers.
                 </p>
             </div>
-            <br/>
-            <MailchimpForm/>
+            <br />
+            <MailchimpForm />
         </PageContent>
     )
 }

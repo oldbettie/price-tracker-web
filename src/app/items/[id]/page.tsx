@@ -27,7 +27,7 @@ export const metadata = {
 export default async function Page({ params }: IProps) {
     return (
         <PageContent>
-            <ProductContainer selectedItem={params.id}/>
+            <ProductContainer selectedItem={params.id} />
         </PageContent>
     )
 }

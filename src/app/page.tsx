@@ -12,18 +12,17 @@ export default function Home() {
     return (
         <PageContent>
             <div className="space-y-4">
-                <h2 className="text-center m-5"><span className="font-bold text-xl">Price mates</span> finds the best
-                    deals
-                    on 4wd parts and camping equipment.
+                <h2 className="text-center m-5">
+                    <span className="font-bold text-xl">Price mates</span> finds the best deals on 4wd parts and camping
+                    equipment.
                 </h2>
                 <h1 className="text-center text-3xl font-bold text-primary uppercase">
                     We are currently under development.
                 </h1>
                 <p className="text-center">
-                    Sign up for early offers via our newsletter <a
-                    href="/contact-us">here</a>.
+                    Sign up for early offers via our newsletter <a href="/contact-us">here</a>.
                 </p>
-                <br/>
+                <br />
                 <div className="xl:w-3/4 space-y-4 sm:w-full">
                     <p>
                         The goal of this site is to provide a place for people to find the best deals on 4wd parts and
@@ -44,9 +43,9 @@ export default function Home() {
                     </p>
                     <p>Early PROTOTYPES look something like this.</p>
                 </div>
-                <br/>
+                <br />
                 <div className={styles.imageContainer}>
-                    <Image src="/item-prices.png" alt="graph sample photo" fill={true}/>
+                    <Image src="/item-prices.png" alt="graph sample photo" fill={true} />
                 </div>
             </div>
         </PageContent>
