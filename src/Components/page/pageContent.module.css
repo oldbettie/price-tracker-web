@@ -33,18 +33,3 @@
 .contentContainer a {
     color: var(--primary);
 }
-
-.container h2 {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.container p {
-    text-align: center;
-    margin: 20px auto;
-}
-
-.button {
-    text-align: center;
-    margin: 20px auto;
-}

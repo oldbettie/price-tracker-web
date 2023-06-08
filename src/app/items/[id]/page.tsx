@@ -1,7 +1,7 @@
-import { Graph } from "@/Components/Graphs/Graph"
 import { PageContent } from "@/Components/page/PageContent"
 import React from "react"
 import { productRoutes } from "@/app/items/[id]/products"
+import { ProductContainer } from "@/Components/Products/ProductContainer"
 
 export function generateStaticParams() {
     return productRoutes.map((p) => {
@@ -11,7 +11,6 @@ export function generateStaticParams() {
 
 /**
  * @description this interface is the required layout for generating static props
- * for a s3 hosted next app
  */
 export interface IProps {
     params: {
@@ -28,7 +27,7 @@ export const metadata = {
 export default async function Page({ params }: IProps) {
     return (
         <PageContent>
-            <Graph inData={params.id} />
+            <ProductContainer selectedItem={params.id}/>
         </PageContent>
     )
 }

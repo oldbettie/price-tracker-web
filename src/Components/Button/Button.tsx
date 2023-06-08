@@ -9,7 +9,7 @@ export interface ButtonProps {
 
 export function Button({ content, click, path }: ButtonProps): JSX.Element {
     return (
-        <button className={styles.button} onClick={click}>
+        <button className={`${styles.button} hover:text-backup hover:border-backup`} onClick={click}>
             {path ? <Link href={path}>{content}</Link> : <p>{content}</p>}
         </button>
     )

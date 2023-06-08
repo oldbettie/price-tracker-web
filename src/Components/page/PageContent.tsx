@@ -10,13 +10,13 @@ interface PageProps {
 export function PageContent({ children }: PageProps): JSX.Element {
     return (
         <main>
-            <Analytics />
+            <Analytics/>
 
             <div className={styles.backgroundImage}></div>
             <div className={styles.backgroundFilter}></div>
-            <Navigation />
+            <Navigation/>
             <div className={styles.container}>
-                <div className={styles.contentContainer}>{children}</div>
+                <div className={`${styles.contentContainer} flex-col`}>{children}</div>
             </div>
         </main>
     )
