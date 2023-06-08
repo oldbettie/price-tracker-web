@@ -22,7 +22,7 @@ export default function Items(): JSX.Element {
                     If a product you are looking for is not on the list below, please let us know
                     <Link href={"/contact-us"}> here!</Link>
                 </p>
-                <br/>
+                <br />
                 <ul className="space-y-2 w-15">
                     {routes.map((link, index) => {
                         return (

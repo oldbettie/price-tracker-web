@@ -17,8 +17,8 @@ export interface InLastDays {
 }
 
 export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.Element {
-    const [ productInfo, setProductInfo ] = useState<Product[]>([])
-    const [ inLastDays, setInLastDays ] = useState<InLastDays>({ averagePrice: 0, inLastDays: 0 })
+    const [productInfo, setProductInfo] = useState<Product[]>([])
+    const [inLastDays, setInLastDays] = useState<InLastDays>({ averagePrice: 0, inLastDays: 0 })
     const lastIndex = productInfo.length - 1
 
     async function getProductData(id: string) {
@@ -81,20 +81,21 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
         getProductData(selectedItem).then((data) => {
             updateProductInfo(data)
         })
-    }, [ selectedItem ])
+    }, [selectedItem])
 
     return (
         <div className="space-y-3">
             {productInfo.length > 0 ? (
                 <>
                     <h1>
-                        <a className="hover:text-backup font-bold text-4xl"
-                           href={productInfo[0].url}>{productInfo[0].name}</a>
+                        <a className="hover:text-backup font-bold text-4xl" href={productInfo[0].url}>
+                            {productInfo[0].name}
+                        </a>
                     </h1>
-                    <br/>
+                    <br />
                     <div className=" grid md:grid-cols-3 md:gap-3 gap-1">
-                        <ValueContainer title="Normal Price:" value={`$${productInfo[lastIndex].fullPrice}`}/>
-                        <ValueContainer title="Current Price:" value={`$${productInfo[lastIndex].currentPrice}`}/>
+                        <ValueContainer title="Normal Price:" value={`$${productInfo[lastIndex].fullPrice}`} />
+                        <ValueContainer title="Current Price:" value={`$${productInfo[lastIndex].currentPrice}`} />
 
                         {productInfo[lastIndex].discountAmount && (
                             <>
@@ -108,17 +109,17 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                                 />
                             </>
                         )}
-                        <ValueContainer title="Last Updated:" value={productInfo[lastIndex].date}/>
-                        <ValueContainer title="Days tracked:" value={`${inLastDays.inLastDays}`}/>
-                        <ValueContainer title="Average Price:" value={`${inLastDays.averagePrice}`}/>
+                        <ValueContainer title="Last Updated:" value={productInfo[lastIndex].date} />
+                        <ValueContainer title="Days tracked:" value={`${inLastDays.inLastDays}`} />
+                        <ValueContainer title="Average Price:" value={`${inLastDays.averagePrice}`} />
                     </div>
-                    <br/>
+                    <br />
                     <h3>Checkout the price of this product over the last few weeks.</h3>
                     <p>
-                        Early versions of the Chart tracked the price every 8 hours we have now changed to just
-                        report new price changes.
+                        Early versions of the Chart tracked the price every 8 hours we have now changed to just report
+                        new price changes.
                     </p>
-                    <LineGraph productData={productInfo}/>
+                    <LineGraph productData={productInfo} />
                 </>
             ) : (
                 "product loading"

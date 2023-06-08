@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/Com
 
 export interface valueProps {
     title: string
-    value?: string,
+    value?: string
     description?: string
 }
 
@@ -15,7 +15,9 @@ export const ValueContainer = ({ title, value, description }: valueProps): JSX.E
                 <CardTitle className="text-primary">{title}</CardTitle>
                 {description && <CardDescription>{description}</CardDescription>}
             </CardHeader>
-            <CardContent><CardTitle className="text-primary">{value}</CardTitle></CardContent>
+            <CardContent>
+                <CardTitle className="text-primary">{value}</CardTitle>
+            </CardContent>
         </Card>
     )
 }
