@@ -26,11 +26,11 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
         const url = UserConfig.SUPABASE_URL
         const headers = {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_TOKEN}`,
+            "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxdWRwYWFsa2tycmpxdHpib3hxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODYyODMxMTUsImV4cCI6MjAwMTg1OTExNX0.SnkpJ-oN2zWzM_rOrBuwj14meSgcqNfZaaxh56Y1ZB8`,
         }
         try {
             const res = await axios.post(`${url}/functions/v1/getProductClient`, { productName: id }, { headers })
-            return res.data["productData"]
+            return await res.data["productData"]
         } catch (error: any) {
             console.error("There was an error requesting the data!", error)
         }
