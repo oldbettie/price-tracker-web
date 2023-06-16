@@ -17,21 +17,26 @@ export default function Items(): JSX.Element {
     return (
         <PageContent>
             <div className="xl:w-3/4 space-y-4 sm:w-full">
-                <h2 className="font-bold w-80">All products we currently track</h2>
+                <h2>
+                    All alpha products we currently track are listed here, We plan to add thousands in the final
+                    product.
+                </h2>
                 <p>
-                    If a product you are looking for is not on the list below, please let us know
-                    <Link href={"/contact-us"}> here!</Link>
+                    Remember to let us know what you think about our product
+                    <Link href={"/contact-us"}> HERE!</Link> for a chance to win a free subscription
                 </p>
                 <br />
                 <ul className="space-y-2 w-15">
                     {routes.map((link, index) => {
-                        return (
-                            <li key={index}>
-                                <Link href={`/items/${link.link}`}>
-                                    <h2 className="hover:text-backup w-fit">{link.name}</h2>
-                                </Link>
-                            </li>
-                        )
+                        if (link.name !== "Domin8r X 12,000lb Winch | 5.7hp Motor") {
+                            return (
+                                <li key={index}>
+                                    <Link href={`/items/${link.link}`}>
+                                        <h2 className="hover:text-backup w-fit">{link.name}</h2>
+                                    </Link>
+                                </li>
+                            )
+                        }
                     })}
                 </ul>
             </div>

@@ -23,7 +23,7 @@ export const Navigation: React.FC = () => {
                 </div>
                 {isDesktop ? (
                     <div className={styles.buttonContainer}>
-                        {UserConfig.ITEMS_FEATURE && <Button content="Items" path={"/items"} />}
+                        {UserConfig.ITEMS_ACTIVE && <Button content="Items" path={"/items"} />}
                         <Button content="About" path={"/about"} />
                         <Button content="Contact Us" path={"/contact-us"} />
                         <Button content="Home" path={"/"} />
