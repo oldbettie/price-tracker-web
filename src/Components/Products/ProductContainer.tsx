@@ -26,14 +26,10 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
         const url = UserConfig.SUPABASE_URL
         const headers = {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_TOKEN}`
+            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_TOKEN}`,
         }
         try {
-            const res = await axios.post(
-                `${url}/functions/v1/getProductClient`,
-                { productName: id },
-                {headers}
-            )
+            const res = await axios.post(`${url}/functions/v1/getProductClient`, { productName: id }, { headers })
             return res.data["productData"]
         } catch (error: any) {
             console.error("There was an error requesting the data!", error)
