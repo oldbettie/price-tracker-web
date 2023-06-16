@@ -26,7 +26,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
         const url = UserConfig.SUPABASE_URL
         const headers = {
             "Content-Type": "application/json",
-            "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxdWRwYWFsa2tycmpxdHpib3hxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODYyODMxMTUsImV4cCI6MjAwMTg1OTExNX0.SnkpJ-oN2zWzM_rOrBuwj14meSgcqNfZaaxh56Y1ZB8`,
+            "Authorization": UserConfig.SUPABASE_KEY,
         }
         try {
             const res = await axios.post(`${url}/functions/v1/getProductClient`, { productName: id }, { headers })

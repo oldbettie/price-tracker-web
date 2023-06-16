@@ -26,7 +26,7 @@ export const HamburgerMenu = () => {
                     />
                     <div className={styles.buttonContainer}>
                         <Button content="Home" path={"/"} click={toggleMenu} />
-                        {UserConfig.ITEMS_FEATURE && <Button content="Items" path={"/items"} click={toggleMenu} />}
+                        {UserConfig.ITEMS_ACTIVE && <Button content="Items" path={"/items"} click={toggleMenu} />}
                         <Button content="About" path={"/about"} click={toggleMenu} />
                         <Button content="Contact Us" path={"/contact-us"} click={toggleMenu} />
                     </div>
