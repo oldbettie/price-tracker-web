@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import { UserConfig } from "@/lib/config/UserConfig"
 import { ValueContainer } from "@/Components/Products/ValueContainer"
 import { LineGraph, Product } from "@/Components/Graphs/Graphs"
+import axios from "axios"
 
 export interface ProductContainerPropsI {
     selectedItem: string
@@ -22,19 +23,16 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
     const lastIndex = productInfo.length - 1
 
     async function getProductData(id: string) {
-        const url = UserConfig.API_URL
+        const url = UserConfig.SUPABASE_URL
+        const headers = {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_TOKEN}`,
+        }
         try {
-            const res: Response = await fetch(`${url}/product/${id}/`, {
-                next: { revalidate: 60 },
-            })
-            const data = await res.json()
-            if (!res.ok) {
-                const error = (data && data.message) || res.statusText
-                return Promise.reject(error)
-            }
-            return data
+            const res = await axios.post(`${url}/functions/v1/getProductClient`, { productName: id }, { headers })
+            return res.data["productData"]
         } catch (error: any) {
-            console.error("There was an error!", error)
+            console.error("There was an error requesting the data!", error)
         }
     }
 
@@ -111,7 +109,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                         )}
                         <ValueContainer title="Last Updated:" value={productInfo[lastIndex].date} />
                         <ValueContainer title="Days tracked:" value={`${inLastDays.inLastDays}`} />
-                        <ValueContainer title="Average Price:" value={`${inLastDays.averagePrice}`} />
+                        <ValueContainer title="Average Price:" value={`$${inLastDays.averagePrice}`} />
                     </div>
                     <br />
                     <h3>Checkout the price of this product over the last few weeks.</h3>
