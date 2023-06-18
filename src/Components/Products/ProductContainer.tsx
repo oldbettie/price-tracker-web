@@ -51,16 +51,10 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
             }
             const fullPrice = discountAmount ? discountAmount + price : price
 
-            const date = new Date(item.insert_date)
-            const aestTimeString = date.toLocaleString("en-AU", {
-                timeZone: "Australia/Sydney",
-                timeZoneName: "short",
-            })
-
             productArray.push({
                 name: item.product_name,
                 currentPrice: price,
-                date: aestTimeString,
+                date: item.insert_date,
                 discountAmount: discountAmount,
                 discountPercentage: discountPercentage,
                 fullPrice: fullPrice,
@@ -107,16 +101,18 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                                 />
                             </>
                         )}
-                        <ValueContainer title="Last Updated:" value={productInfo[lastIndex].date} />
+                        <ValueContainer
+                            title="Last Updated:"
+                            value={new Date(productInfo[lastIndex].date).toLocaleString("en-AU", {
+                                timeZone: "Australia/Sydney",
+                                timeZoneName: "short",
+                            })}
+                        />
                         <ValueContainer title="Days tracked:" value={`${inLastDays.inLastDays}`} />
                         <ValueContainer title="Average Price:" value={`$${inLastDays.averagePrice}`} />
                     </div>
                     <br />
-                    <h3>Checkout the price of this product over the last few weeks.</h3>
-                    <p>
-                        Early versions of the Chart tracked the price every 8 hours we have now changed to just report
-                        new price changes.
-                    </p>
+                    <h3>Checkout the price of this product over the last few weeks. Each point is a single day.</h3>
                     <LineGraph productData={productInfo} />
                 </>
             ) : (
