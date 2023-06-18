@@ -14,15 +14,15 @@ export const HamburgerMenu = () => {
     return (
         <div>
             {isOpen ? (
-                <div className={`${styles.hamburgerIcon} hover:text-backup hover:border-backup text-primary`}>
-                    <FiMenu size={35} onClick={toggleMenu} />
+                <div className={`absolute right-3 top-2 hover:text-backup hover:border-backup text-primary`}>
+                    <FiMenu size={35} onClick={toggleMenu} className="hover:cursor-pointer" />
                 </div>
             ) : (
-                <div className={styles.hamburgerContent}>
+                <div className="absolute w-1/2 h-auto p-4 pb-8 rounded-xl top-12 right-1/4 z-10 bg-backupOpacity90">
                     <FiX
                         size={45}
                         onClick={toggleMenu}
-                        className="hover:text-backup hover:border-backup text-primary"
+                        className="hover:text-backup hover:border-backup text-primary hover:cursor-pointer"
                     />
                     <div className={styles.buttonContainer}>
                         <Button content="Home" path={"/"} click={toggleMenu} />

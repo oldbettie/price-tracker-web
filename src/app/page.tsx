@@ -25,8 +25,9 @@ export default function Home() {
                     We are currently under development.
                 </h1>
                 <h2 className="text-center text-2xl">
-                    Checkout the early prototype <a href="/items">here</a>.
+                    Checkout the early prototype.
                 </h2>
+                <h1 className="text-center text-3xl"><a href="/items">HERE!</a></h1>
                 <br />
                 <p className="text-center">
                     Sign up for early offers via our newsletter <a href="/contact-us">HERE</a>.

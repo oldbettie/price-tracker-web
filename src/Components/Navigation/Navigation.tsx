@@ -19,7 +19,9 @@ export const Navigation: React.FC = () => {
         <div className={styles.container}>
             <div className={styles.contentContainer}>
                 <div className={styles.imageContainer}>
-                    <Image src="/priceMates.png" alt="Price Mates logo" fill={true} className={styles.logo} />
+                    <a href="/">
+                        <Image src="/priceMates.png" alt="Price Mates logo" fill={true} className={styles.logo} />
+                    </a>
                 </div>
                 {isDesktop ? (
                     <div className={styles.buttonContainer}>
