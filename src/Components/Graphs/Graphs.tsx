@@ -26,10 +26,11 @@ type ProdData = {
 
 export function LineGraph({ productData }: lineProps): JSX.Element {
     const [prodData, setProdData] = useState<ProdData[]>([])
+
     const asDates = productData.map((product: Product) => {
         return {
             x: new Date(product.date),
-            y: product.currentPrice
+            y: product.currentPrice,
         }
     })
 
@@ -45,7 +46,11 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
     ]
 
     useEffect(() => {
-        setProdData(asSetTimeFrame(30, asDates))
+        if (window.innerWidth < 768) {
+            setProdData(asSetTimeFrame(7, asDates))
+        } else {
+            setProdData(asSetTimeFrame(30, asDates))
+        }
     }, [productData])
 
     return (
@@ -107,7 +112,7 @@ function asSetTimeFrame(days: number, data: { x: Date; y: number }[]) {
 
     // Generate the array of dates
     for (let i = days - 1; i >= 0; i--) {
-        const currentDate = new Date(data[data.length -1].x.setHours(0,0,0,0) - i * millisecondsPerDay)
+        const currentDate = new Date(data[data.length - 1].x.setHours(0, 0, 0, 0) - i * millisecondsPerDay)
         daysArray.push(currentDate)
     }
 
@@ -116,8 +121,8 @@ function asSetTimeFrame(days: number, data: { x: Date; y: number }[]) {
         let price: number | undefined
 
         // Find the price for the current date or the nearest previous date with a price
-        for (let i = data.length -1; i >= 0; i--) {
-            if (data[i].x.setHours(0,0,0,0) === date.getTime()) {
+        for (let i = data.length - 1; i >= 0; i--) {
+            if (data[i].x.setHours(0, 0, 0, 0) === date.getTime()) {
                 price = data[i].y
                 break
             }
