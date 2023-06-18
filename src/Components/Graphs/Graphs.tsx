@@ -42,18 +42,20 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
     ]
 
     /*
-    * adding this filter method here allows us to add more filters later. it also ensures if the price has not changed
-    * in a while it will still show the last price as long as there is a date point within n days
-    * this also means we can add the option to use a text input to allow users to pick a time frame
+     * adding this filter method here allows us to add more filters later. it also ensures if the price has not changed
+     * in a while it will still show the last price as long as there is a date point within n days
+     * this also means we can add the option to use a text input to allow users to pick a time frame
      */
     function setDataFilter(filter: number) {
-        setProdData(asTimeFrame(productData).filter((e, i) => {
-            return i > asTimeFrame(productData).length - filter
-        }))
+        setProdData(
+            asTimeFrame(productData).filter((e, i) => {
+                return i > asTimeFrame(productData).length - filter
+            })
+        )
     }
 
     useEffect(() => {
-        if (window.innerWidth  < 768) {
+        if (window.innerWidth < 768) {
             setDataFilter(WEEK)
         } else {
             setDataFilter(MONTH)

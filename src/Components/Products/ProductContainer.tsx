@@ -63,7 +63,8 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
         })
 
         const millisecondsPerDay = 24 * 60 * 60 * 1000 // Number of milliseconds in a day
-        const daysTotal = (new Date().setHours(0, 0, 0, 0) - new Date(productArray[1].date).setHours(0, 0, 0, 0)) / millisecondsPerDay
+        const daysTotal =
+            (new Date().setHours(0, 0, 0, 0) - new Date(productArray[1].date).setHours(0, 0, 0, 0)) / millisecondsPerDay
 
         setInLastDays({
             inLastDays: daysTotal,
