@@ -59,14 +59,14 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
                 <ResponsiveLine
                     data={asSerie}
                     margin={{
-                        top: 50,
-                        right: 90,
-                        bottom: 80,
-                        left: 60,
+                        top: 20,
+                        right: 30,
+                        bottom: 50,
+                        left: 50,
                     }}
                     xScale={{ type: "point" }}
                     yScale={{ type: "linear", min: minPrice, max: maxPrice }}
-                    yFormat=" >-.2f"
+                    yFormat=" >-$"
                     axisTop={null}
                     axisRight={null}
                     axisBottom={{
@@ -74,12 +74,12 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
                         tickPadding: 5,
                         tickRotation: 30,
                         legend: "date",
-                        legendOffset: 56,
+                        legendOffset: 36,
                         legendPosition: "middle",
                     }}
                     axisLeft={{
-                        tickSize: 5,
-                        tickPadding: 5,
+                        tickSize: 6,
+                        tickPadding: 2,
                         tickRotation: 0,
                         legend: "price",
                         legendOffset: -40,
@@ -89,7 +89,7 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
                     pointColor={{ theme: "background" }}
                     pointBorderWidth={2}
                     pointBorderColor={{ from: "serieColor" }}
-                    pointLabelYOffset={-12}
+                    pointLabelYOffset={-8}
                     useMesh={true}
                     curve={"linear"}
                     lineWidth={4}
