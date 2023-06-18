@@ -8,7 +8,7 @@ import { Button } from "@/Components/Button/Button"
 export interface Product {
     name: string
     currentPrice: number
-    date: string
+    date: Date
     discountAmount: number | null
     discountPercentage?: number
     fullPrice?: number
@@ -23,19 +23,15 @@ type ProdData = {
     x: string
     y: number
 }
+const MILLIS_IN_DAY = 24 * 60 * 60 * 1000 // Number of milliseconds in a day
+const WEEK = 7
+const FORTNIGHT = 14
+const MONTH = 39
 
 export function LineGraph({ productData }: lineProps): JSX.Element {
     const [prodData, setProdData] = useState<ProdData[]>([])
-
-    const asDates = productData.map((product: Product) => {
-        return {
-            x: new Date(product.date),
-            y: product.currentPrice,
-        }
-    })
-
-    const minPrice = Math.min(...asDates.map((i) => i.y)) - 10
-    const maxPrice = Math.max(...asDates.map((i) => i.y)) + 30
+    const minPrice = Math.min(...productData.map((i) => i.currentPrice)) - 10
+    const maxPrice = Math.max(...productData.map((i) => i.currentPrice)) + 30
 
     const asSerie: Serie[] = [
         {
@@ -45,20 +41,31 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
         },
     ]
 
+    /*
+    * adding this filter method here allows us to add more filters later. it also ensures if the price has not changed
+    * in a while it will still show the last price as long as there is a date point within n days
+    * this also means we can add the option to use a text input to allow users to pick a time frame
+     */
+    function setDataFilter(filter: number) {
+        setProdData(asTimeFrame(productData).filter((e, i) => {
+            return i > asTimeFrame(productData).length - filter
+        }))
+    }
+
     useEffect(() => {
-        if (window.innerWidth < 768) {
-            setProdData(asSetTimeFrame(7, asDates))
+        if (window.innerWidth  < 768) {
+            setDataFilter(WEEK)
         } else {
-            setProdData(asSetTimeFrame(30, asDates))
+            setDataFilter(MONTH)
         }
     }, [productData])
 
     return (
         <div>
             <div className="flex w-fit hover:cursor-pointer gap-2">
-                <Button content="Last 7 days" click={() => setProdData(asSetTimeFrame(7, asDates))} />
-                <Button content="Last 14 days" click={() => setProdData(asSetTimeFrame(14, asDates))} />
-                <Button content="Last 30 days" click={() => setProdData(asSetTimeFrame(30, asDates))} />
+                <Button content="Last 7 days" click={() => setDataFilter(WEEK)} />
+                <Button content="Last 14 days" click={() => setDataFilter(FORTNIGHT)} />
+                <Button content="Last 30 days" click={() => setDataFilter(MONTH)} />
             </div>
             <div className={styles.lineChart}>
                 <ResponsiveLine
@@ -105,14 +112,14 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
     )
 }
 
-function asSetTimeFrame(days: number, data: { x: Date; y: number }[]) {
+function asTimeFrame(data: Product[]) {
+    const daysTotal = (new Date().setHours(0, 0, 0, 0) - data[1].date.setHours(0, 0, 0, 0)) / MILLIS_IN_DAY
     const daysArray: Date[] = []
-    const millisecondsPerDay = 24 * 60 * 60 * 1000 // Number of milliseconds in a day
     const priceArray: number[] = []
 
     // Generate the array of dates
-    for (let i = days - 1; i >= 0; i--) {
-        const currentDate = new Date(data[data.length - 1].x.setHours(0, 0, 0, 0) - i * millisecondsPerDay)
+    for (let i = daysTotal - 1; i >= 0; i--) {
+        const currentDate = new Date(new Date().setHours(0, 0, 0, 0) - i * MILLIS_IN_DAY)
         daysArray.push(currentDate)
     }
 
@@ -122,8 +129,8 @@ function asSetTimeFrame(days: number, data: { x: Date; y: number }[]) {
 
         // Find the price for the current date or the nearest previous date with a price
         for (let i = data.length - 1; i >= 0; i--) {
-            if (data[i].x.setHours(0, 0, 0, 0) === date.getTime()) {
-                price = data[i].y
+            if (data[i].date.setHours(0, 0, 0, 0) === date.getTime()) {
+                price = data[i].currentPrice
                 break
             }
         }

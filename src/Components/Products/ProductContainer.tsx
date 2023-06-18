@@ -54,7 +54,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
             productArray.push({
                 name: item.product_name,
                 currentPrice: price,
-                date: item.insert_date,
+                date: new Date(item.insert_date),
                 discountAmount: discountAmount,
                 discountPercentage: discountPercentage,
                 fullPrice: fullPrice,
@@ -62,8 +62,11 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
             })
         })
 
+        const millisecondsPerDay = 24 * 60 * 60 * 1000 // Number of milliseconds in a day
+        const daysTotal = (new Date().setHours(0, 0, 0, 0) - new Date(productArray[1].date).setHours(0, 0, 0, 0)) / millisecondsPerDay
+
         setInLastDays({
-            inLastDays: Math.floor(productArray.length / 3),
+            inLastDays: daysTotal,
             averagePrice: Math.floor(productArray.reduce((a, b) => a + b.currentPrice, 0) / productArray.length),
         })
         setProductInfo(productArray)
@@ -103,7 +106,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                         )}
                         <ValueContainer
                             title="Last Updated:"
-                            value={new Date(productInfo[lastIndex].date).toLocaleString("en-AU", {
+                            value={productInfo[lastIndex].date.toLocaleString("en-AU", {
                                 timeZone: "Australia/Sydney",
                                 timeZoneName: "short",
                             })}
