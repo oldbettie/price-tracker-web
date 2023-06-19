@@ -27,11 +27,9 @@ export default function Home() {
                     <h1 className="text-center text-3xl font-bold text-primary uppercase">
                         We are currently under development.
                     </h1>
-                    <p className="text-center text-sm">
-                        Everything is subject to change.
-                    </p>
+                    <p className="text-center text-sm">Everything is subject to change.</p>
                 </div>
-                <br/>
+                <br />
                 <h2 className="text-center text-2xl">Checkout the early prototype.</h2>
                 <Button content="HERE!" path={"/items"} />
                 <br />
