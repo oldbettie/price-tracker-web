@@ -86,7 +86,7 @@ export const SimpleEmailForm = () => {
                         value=""
                     />
                 </div>
-                <h3 className="m-auto w-max">{successState}</h3>
+                <h3 className="m-auto w-fill text-center">{successState}</h3>
                 <Button content={"Subscribe"} />
             </form>
         </div>

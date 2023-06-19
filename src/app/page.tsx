@@ -1,6 +1,7 @@
 import React from "react"
 import { PageContent } from "@/Components/page/PageContent"
 import { SimpleEmailForm } from "@/Components/Forms/SimpleEmailForm"
+import { Button } from "@/Components/Button/Button"
 
 export const metadata = {
     title: "Price Mates",
@@ -22,15 +23,17 @@ export default function Home() {
                 </p>
                 <br />
                 <br />
-                <h1 className="text-center text-3xl font-bold text-primary uppercase">
-                    We are currently under development.
-                </h1>
-                <h2 className="text-center text-2xl">Checkout the early prototype.</h2>
-                <h1 className="text-center text-3xl">
-                    <a href="/items">HERE!</a>
-                </h1>
+                <div>
+                    <h1 className="text-center text-3xl font-bold text-primary uppercase">
+                        We are currently under development.
+                    </h1>
+                    <p className="text-center text-sm">Everything is subject to change.</p>
+                </div>
                 <br />
-                <p className="text-center">Sign up for early offers.</p>
+                <h2 className="text-center text-2xl">Checkout the early prototype.</h2>
+                <Button content="HERE!" path={"/items"} />
+                <br />
+                <p className="text-center">Sign up for special early offers.</p>
                 <SimpleEmailForm />
             </div>
         </PageContent>
