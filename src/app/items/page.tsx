@@ -18,7 +18,7 @@ export default function Items(): JSX.Element {
         <PageContent>
             <div className="xl:w-3/4 space-y-4 sm:w-full">
                 <h2>
-                    All alpha products we currently track are listed here, We plan to add thousands in the final
+                    All alpha products we currently tracked and listed here. We plan to add thousands in the final
                     product.
                 </h2>
                 <p>

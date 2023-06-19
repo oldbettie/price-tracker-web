@@ -1,5 +1,6 @@
 import React from "react"
 import { PageContent } from "@/Components/page/PageContent"
+import { SimpleEmailForm } from "@/Components/Forms/SimpleEmailForm"
 
 export const metadata = {
     title: "Price Mates",
@@ -15,9 +16,9 @@ export default function Home() {
                     equipment.
                 </h2>
                 <p className="max-w-2xl m-auto text-center">
-                    With the increased cost of living more and more people are waiting patiently for a good sale to come
-                    along before purchasing the parts they need. This site will allow you to track the price of the
-                    parts you need and notify you when the price drops below a certain threshold.
+                    With the increased cost of living, more and more people are waiting patiently for a good sale to
+                    come along before purchasing the parts they want. This site will allow you to track the price of the
+                    equipment you need and notify you when the price drops below a certain threshold.
                 </p>
                 <br />
                 <br />
@@ -29,13 +30,8 @@ export default function Home() {
                     <a href="/items">HERE!</a>
                 </h1>
                 <br />
-                <p className="text-center">
-                    Sign up for early offers via our newsletter <a href="/contact-us">HERE</a>.
-                </p>
-                <p className="max-w-2xl m-auto text-center">
-                    We will be picking 100 users to receive a 12 month FREE membership based on the feedback you
-                    provide. Most constructive feedback will win.
-                </p>
+                <p className="text-center">Sign up for early offers.</p>
+                <SimpleEmailForm />
             </div>
         </PageContent>
     )
