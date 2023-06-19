@@ -12,45 +12,52 @@ export default function About(): JSX.Element {
             <div className="xl:w-3/4 space-y-4 sm:w-full">
                 <h2 className="text-3xl font-bold">About Us</h2>
                 <p>
-                    I started to realise with the increased cost of living there were more and more people online
-                    looking for a good deal on 4wd parts and camping equipment. When I was looking for parts I used to
-                    have two thought patterns. The first was to look for the parts second hand really cheap and not
-                    really worry about a warranty or anything like that. The second was to buy brand new and pay a
-                    premium for the warranty and the peace of mind that comes with it.
+                    I started to realize with the increased cost of living, there were more and more people online
+                    looking for a good deal on 4wd parts and camping equipment. While looking for parts myself I used to
+                    have two thought patterns. First, it was to look for the parts second hand at the best price and not
+                    worry about a warranty. The second was to buy brand new equipment and pay a premium for the warranty
+                    along with the peace of mind.
                 </p>
                 <p>
-                    With the increased cost of living I found second hand parts not as cheap as they used to be and
-                    sometimes are the same or more then the parts at brand new prices. So I started to wait patiently
-                    for a good sale to come along before making the purchase.
+                    I found second hand parts are not as cheap as they once were and sometimes are the same or quite
+                    often marked higher than brand new prices (dang covid tax). So, I started to wait patiently for a
+                    good sale to come along before making my desired purchase.
                 </p>
                 <p>
-                    This site will allow you to track the price of the parts you need and notify you when the price
-                    drops below a certain threshold. This will allow you to get the best deal on the parts you need
-                    without having to guess when the best time to buy is. The long term goal once I have collected
-                    enough data is to be able to predict when the best time to buy is and notify you when the price is
-                    at its lowest.
+                    This site allows you to track the price of the equipment you need and will notify you when the price
+                    drops below a certain threshold. This will allow you to get the best deals on the parts you need and
+                    want, while taking the guesswork out for you on when the best time to buy is. Once I have collected
+                    enough data for a product I am able to predict when the perfect time to buy is and notify you when
+                    the price is at its lowest.
                 </p>
+                <br />
                 <hr />
-                <p>
-                    V1 - will just track a handful of highly requested parts and send an alert when the price drops
-                    below a certain threshold.
-                </p>
-                <p>
-                    V2 - will allow you to track any part you want and send an alert when the price drops to the value
-                    you are happy to pay you will be able to pick and choose the parts you want to be alerted for, I
-                    will also have incorporated many more resellers to ensure the best prices.
-                </p>
-                <p>
-                    V3 - will have a large range of sellers and once the data is big set is big enough for each product
-                    I want to use AI to predict when we might get a really good deal on the items and let you know it's
-                    time to start saving those dollars!
-                </p>
-                <hr />
-                <p>
-                    I believe in full context from the start this will be a paid subscription, I don't know when the
-                    paid subscription will be introduced. I will offer some sort of deal to those that sign up before
-                    the model is introduced. And it will be limited to the first 100 users.
-                </p>
+                <br />
+                <h2 className="text-3xl">Launch Roadmap</h2>
+
+                <div className="pl-3">
+                    <h3 className="font-bold text-lg">Alpha launch ( 20th june )</h3>
+                    <ul className="ml-3">
+                        <li>- Track a handful of highly requested parts showing simple price charts.</li>
+                        <li>- Allow users to sign up for early offers and discounts.</li>
+                    </ul>
+                </div>
+
+                <div className="pl-3">
+                    <h3 className="font-bold text-lg">V0 MVP ( ETA Dec/23 )</h3>
+                    <ul className="ml-3">
+                        <li>- Track a large range of products over a larger time frame.</li>
+                        <li>- User specific profiles with product alerts and prediction integration.</li>
+                    </ul>
+                </div>
+                <div className="pl-3">
+                    <h3 className="font-bold text-lg">V1 ( TBD )</h3>
+                    <ul className="ml-3">
+                        <li>- Track thousands of products across many industries and brands.</li>
+                        <li>- Integrate price reviews compare the price others think are a good deal.</li>
+                        <li>- Full integration will realtime ai price predictions.</li>
+                    </ul>
+                </div>
             </div>
         </PageContent>
     )
