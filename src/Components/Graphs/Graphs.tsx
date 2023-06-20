@@ -64,7 +64,7 @@ export function LineGraph({ productData }: lineProps): JSX.Element {
 
     return (
         <div>
-            <div className="flex w-fit hover:cursor-pointer gap-2">
+            <div className="flex w-fit hover:cursor-pointer gap-2 m-auto md:m-0 pb-2">
                 <Button content="Last 7 days" click={() => setDataFilter(WEEK)} />
                 <Button content="Last 14 days" click={() => setDataFilter(FORTNIGHT)} />
                 <Button content="Last 30 days" click={() => setDataFilter(MONTH)} />
