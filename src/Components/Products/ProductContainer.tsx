@@ -90,7 +90,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                         </a>
                     </h1>
                     {productInfo[lastIndex].discountAmount && (
-                        <h3 className="text-xl text-yellow-400 pt-2">This product is currently on sale!</h3>
+                        <h3 className="text-xl text-yellow-400 pt-2">This item is currently on sale!</h3>
                     )}
                     <br />
                     <div className=" grid md:grid-cols-3 md:gap-3 gap-1">
