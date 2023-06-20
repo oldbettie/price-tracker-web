@@ -5,6 +5,7 @@ import { UserConfig } from "@/lib/config/UserConfig"
 import { ValueContainer } from "@/Components/Products/ValueContainer"
 import { LineGraph, Product } from "@/Components/Graphs/Graphs"
 import axios from "axios"
+import { Loader } from "@/Components/Loader/Loader"
 
 export interface ProductContainerPropsI {
     selectedItem: string
@@ -88,6 +89,9 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                             {productInfo[0].name}
                         </a>
                     </h1>
+                    {productInfo[lastIndex].discountAmount && (
+                        <h3 className="text-xl text-yellow-400 pt-2">This product is currently on sale!</h3>
+                    )}
                     <br />
                     <div className=" grid md:grid-cols-3 md:gap-3 gap-1">
                         <ValueContainer title="Normal Price:" value={`$${productInfo[lastIndex].fullPrice}`} />
@@ -101,7 +105,7 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                                 />
                                 <ValueContainer
                                     title="Percent Saved:"
-                                    value={`${productInfo[lastIndex].discountPercentage}`}
+                                    value={`${productInfo[lastIndex].discountPercentage}%`}
                                 />
                             </>
                         )}
@@ -116,11 +120,15 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                         <ValueContainer title="Average Price:" value={`$${inLastDays.averagePrice}`} />
                     </div>
                     <br />
-                    <h3>Checkout the price of this product over the last few weeks. Each point is a single day.</h3>
+                    <h3 className="text-center md:text-left">Checkout the price history of this product.</h3>
                     <LineGraph productData={productInfo} />
+                    <p>Remember to join our mailing list for a chance to win a free subscription <a href="/contact-us">HERE.</a></p>
                 </>
             ) : (
-                "product loading"
+                <div className="flex flex-col justify-center items-center">
+                    <Loader />
+                    <h2 className="text-xl">Loading Product Data</h2>
+                </div>
             )}
         </div>
     )
