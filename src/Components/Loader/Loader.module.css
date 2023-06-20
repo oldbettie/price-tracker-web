@@ -8,10 +8,10 @@
     height: 20px;
     width: 50px;
     position: absolute;
-
 }
 
-.duo, .dot {
+.duo,
+.dot {
     animation-duration: 0.8s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
@@ -22,9 +22,8 @@
 }
 
 .duo2 {
-    left: 30px
+    left: 30px;
 }
-
 
 .dot {
     width: 20px;
@@ -43,16 +42,30 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg) }
-    50% { transform: rotate(180deg) }
-    100% { transform: rotate(180deg) }
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
 }
 
 @keyframes onOff {
-    0% { opacity: 0; }
-    49% { opacity: 0; }
-    50% {opacity: 1; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .duo1 {

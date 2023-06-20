@@ -122,7 +122,10 @@ export function ProductContainer({ selectedItem }: ProductContainerPropsI): JSX.
                     <br />
                     <h3 className="text-center md:text-left">Checkout the price history of this product.</h3>
                     <LineGraph productData={productInfo} />
-                    <p>Remember to join our mailing list for a chance to win a free subscription <a href="/contact-us">HERE.</a></p>
+                    <p>
+                        Remember to join our mailing list for a chance to win a free subscription{" "}
+                        <a href="/contact-us">HERE.</a>
+                    </p>
                 </>
             ) : (
                 <div className="flex flex-col justify-center items-center">
