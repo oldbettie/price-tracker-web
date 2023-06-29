@@ -3,7 +3,7 @@ import { PageContent } from "@/Components/page/PageContent"
 import { SimpleEmailForm } from "@/Components/Forms/SimpleEmailForm"
 
 export const metadata = {
-    title: "Contact Us - Price Mates",
+    title: "Contact Us - Pricemates",
     description: "find out how you can get in contact with our team",
 }
 

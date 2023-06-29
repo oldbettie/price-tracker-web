@@ -20,7 +20,7 @@ export interface IProps {
 }
 
 export const metadata = {
-    title: "Item - Price Mates",
+    title: "Item - Pricemates",
     description: "track the price of the current selected item.",
 }
 

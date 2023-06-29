@@ -2,7 +2,7 @@ import React from "react"
 import { PageContent } from "@/Components/page/PageContent"
 
 export const metadata = {
-    title: "About - Price Mates",
+    title: "About - Pricemates",
     description: "find out more about why we wanted to save you money on camping equipment and parts",
 }
 

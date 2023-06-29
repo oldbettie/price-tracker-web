@@ -20,7 +20,7 @@ export const Navigation: React.FC = () => {
             <div className={styles.contentContainer}>
                 <div className={styles.imageContainer}>
                     <a href="/">
-                        <Image src="/priceMates.png" alt="Price Mates logo" fill={true} />
+                        <Image src="/priceMates.png" alt="Pricemates logo" fill={true} />
                     </a>
                 </div>
                 {isDesktop ? (
