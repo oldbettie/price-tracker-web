@@ -5,7 +5,7 @@ import { productRoutes } from "@/app/items/[id]/products"
 import { notFound } from "next/navigation"
 
 export const metadata = {
-    title: "Items - Price Mates",
+    title: "Items - Pricemates",
     description: "find and compare prices on camping and 4wd equipment",
 }
 

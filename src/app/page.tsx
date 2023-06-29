@@ -4,7 +4,7 @@ import { SimpleEmailForm } from "@/Components/Forms/SimpleEmailForm"
 import { Button } from "@/Components/Button/Button"
 
 export const metadata = {
-    title: "Price Mates",
+    title: "Pricemates",
     description: "find and compare prices on camping and 4wd equipment",
 }
 
@@ -13,7 +13,7 @@ export default function Home() {
         <PageContent>
             <div className="space-y-4">
                 <h2 className="text-center m-5">
-                    <span className="font-bold text-xl">Price mates</span> finds the best deals on 4wd parts and camping
+                    <span className="font-bold text-xl">Pricemates</span> finds the best deals on 4wd parts and camping
                     equipment.
                 </h2>
                 <p className="max-w-2xl m-auto text-center">
