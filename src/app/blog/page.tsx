@@ -21,7 +21,7 @@ export default function Blog(): JSX.Element {
         title: "Why Pricemates?",
         description: "With the increased cost of living, lets learn how Pricemates can help you save money today!",
         image: "/muddy-cruiser.jpg",
-        link: "/blog/articles/why-pricemates",
+        link: "/blog/articles/how-pricemates-can-help-you-save-big",
     }
 
     return (

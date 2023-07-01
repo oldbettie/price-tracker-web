@@ -5,8 +5,8 @@ export type ArticleList = {
 
 export const articles: ArticleList[] = [
     {
-        title: "Why Pricemates?",
-        url: "/blog/articles/why-pricemates",
+        title: "How PriceMates Can Help You Save Big?",
+        url: "/blog/articles/how-pricemates-can-help-you-save-big",
     },
     {
         title: "Development roadmap",
