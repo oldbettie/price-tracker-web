@@ -1,3 +1,5 @@
+import React from "react"
+
 export type TableData = {
     product: string
     salePrice: string
@@ -50,6 +52,12 @@ export const Table = ({ data }: TableProps) => {
                     ))}
                 </tbody>
             </table>
+            <p>
+                these prices are based on the current sale prices found{" "}
+                <a className="hover:text-backup underline" href="/items">
+                    here
+                </a>
+            </p>
         </div>
     )
 }

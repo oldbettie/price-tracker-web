@@ -24,6 +24,13 @@ export default function Blog(): JSX.Element {
         link: "/blog/articles/how-pricemates-can-help-you-save-big",
     }
 
+    const latestArticle: FeatureArticle = {
+        title: "Pricemates Development Roadmap",
+        description: "Here is what we have in store for the platform.",
+        image: "/priceMates.png",
+        link: "/blog/articles/development-roadmap",
+    }
+
     return (
         <PageContent>
             <h2 className="text-4xl font-bold  flex items-center p-12 rounded-xl bg-backupOpacity90 h-20 w-fit m-auto">
@@ -32,7 +39,7 @@ export default function Blog(): JSX.Element {
             <div className="flex gap-5 flex-col lg:flex-row">
                 <div className="w-fit">
                     <ArticleCard article={currentFeature} articleType="Featured" />
-                    <ArticleCard article={currentFeature} articleType="Latest" />
+                    <ArticleCard article={latestArticle} articleType="Latest" />
                 </div>
                 <ArticleList articleList={articles} />
             </div>

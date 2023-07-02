@@ -3,7 +3,7 @@ import { PageContent } from "@/Components/page/PageContent"
 import { Table, TableData } from "@/Components/ui/Table"
 
 export const metadata = {
-    title: "Why Pricemates",
+    title: "How PriceMates Can Help You Save Big",
     description: "How can Pricemates help you save money.",
 }
 
@@ -45,7 +45,7 @@ export default function Page(): JSX.Element {
     return (
         <PageContent>
             <div className="flex flex-col gap-10 lg:w-3/4 m-auto">
-                <h2 className="text-center font-bold text-2xl">How Pricemates Can Help You Save Big?</h2>
+                <h2 className="text-center font-bold text-2xl">How Pricemates Can Help You Save Big</h2>
                 <div>
                     <h3 className="font-bold text-xl mb-2">Introduction:</h3>
                     <p>
@@ -109,11 +109,11 @@ export default function Page(): JSX.Element {
                         Saving nearly <span className="text-lg text-primary">$1,000</span> on a
                         <span className="text-lg text-primary"> $3,000 </span>
                         list of items is undoubtedly a remarkable feat. Considering that I ordered approximately 30
-                        parts for the vehicle, with an overall expenditure of around
+                        parts total for the vehicle, with an overall expenditure of around
                         <span className="text-lg text-primary"> $6,000</span>, it becomes evident that uninformed
                         purchases would have cost me an additional 50%, totaling
                         <span className="text-lg text-primary"> $9,000</span>. These astounding savings highlight the
-                        significant impact of shopping with Pricemates.
+                        significant impact of shopping with Pricemates and a bit of patience.
                     </p>
                 </div>
                 <div>
@@ -127,7 +127,7 @@ export default function Page(): JSX.Element {
                         Pricemates by your side.
                     </p>
                 </div>
-                <a className="hover:text-backup" href="/">
+                <a className="hover:text-backup font-bold text-xl underline w-fit" href="/">
                     Pricemates.net
                 </a>
             </div>
