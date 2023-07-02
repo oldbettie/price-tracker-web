@@ -41,10 +41,12 @@ export default function Page(): JSX.Element {
                     <h3 className="font-bold text-xl mb-2">Discovering a Brand: 4WD Supacentre</h3>
                     <p>
                         In my quest to find a brand that ran consistent sales, I came across{" "}
-                        <a className="hover:text-backup" href="https://4wdsupacenter.com.au">4wdsupacenter</a> This company, known for its
-                        volume-based pricing model, surprised many by offering some of the lowest prices in the industry
-                        without compromising on quality. With their regular and predictable sale patterns, I swiftly
-                        validated my idea.
+                        <a className="hover:text-backup" href="https://4wdsupacenter.com.au">
+                            4wdsupacenter
+                        </a>{" "}
+                        This company, known for its volume-based pricing model, surprised many by offering some of the
+                        lowest prices in the industry without compromising on quality. With their regular and
+                        predictable sale patterns, I swiftly validated my idea.
                     </p>
                 </div>
                 <div>
